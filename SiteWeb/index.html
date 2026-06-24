@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourisme</title>
+
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.19/dist/esri-leaflet.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <div id="carte"></div>
+    <div id="Titre" class="leaflet-bar">Carte touristique
+    </div>
+
+    <script>
+        const centreCarte = [46.748441, -71.779840];
+        const fondRues = L.esri.basemapLayer('Streets');
+        const fondImagerie = L.esri.basemapLayer('Imagery');
+        //Création de la carte de base
+        const carte = L.map("carte", {
+
+        });
+        //Ajout de l'imagerie
+        fondImagerie.addTo(carte);
+        //Point central de la carte
+        carte.setView(centreCarte, 8);
+
+        //Cjoix des fonds
+        const fonds = {
+            "Rues": fondRues,
+            "Imagerie": fondImagerie
+        }
+
+
+        L.control.layers(fonds).addTo(carte);
+
+        //Échelle
+        L.control.scale({ 'imperial': false, 'maxWidth': 500 }).addTo(carte);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#carte {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#Titre{
+    position: absolute;
+    right: 10px;
+    bottom:20px;
+    z-index: 401;
+    background-color: rgb(247,248,248);
+    color: gray;
+    font-weight: bold;
+    font-size:30px;
+    padding: 10px;
+    text-align: center;
+  }
+
