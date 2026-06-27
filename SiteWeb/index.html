@@ -37,7 +37,7 @@
         //Point central de la carte
         carte.setView(centreCarte, 8);
 
-        //Cjoix des fonds
+        //Choix des fonds
         const fonds = {
             "Rues": fondRues,
             "Imagerie": fondImagerie
@@ -49,6 +49,35 @@
         //Échelle
         L.control.scale({ 'imperial': false, 'maxWidth': 500 }).addTo(carte);
 
+        //Géolocalisation de l'usager
+        //Création d'un groupe pour gérer la couche de localisation de l'usager
+        let groupePosition = L.layerGroup().addTo(carte);
+        function localisation() {
+            //Suivi de la position
+            carte.locate({ setView: true, watch: false })
+                .on('locationfound', function (e) { //Lors de l'accès à la position de l'usager
+                    let marker = L.circle([e.latitude, e.longitude], 2,{  //Symbole de positionnement
+                        color: 'blue',
+                        fillOpacity: 1
+                    });
+                    let circle = L.circle([e.latitude, e.longitude], e.accuracy / 2, { //Symbole pour la précision
+                        weight: 0,
+                        color: 'blue',
+                        fillColor: 'blue',
+                        fillOpacity: 0.2
+                    });
+                    //Efface les couches et les ajoute pour le rafraichissement
+                    groupePosition.clearLayers(); 
+                    groupePosition.addLayer(marker);
+                    groupePosition.addLayer(circle);
+                })
+                .on('locationerror', function (e) {
+                    console.log(e);
+                    alert("Permission refusée!"); //En cas d'erreur.
+                });
+        }
+
+        localisation(); //Appel de la fonction
     </script>
 </body>
 
