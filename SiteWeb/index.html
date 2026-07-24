@@ -8,13 +8,16 @@
     <title>Tourisme</title>
 
     <!-- Load Leaflet from CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@3.0.19/dist/esri-leaflet.js"></script>
 
+    <script src="https://unpkg.com/esri-leaflet-vector@4.3.2/dist/esri-leaflet-vector.js"></script>
+
     <link rel="stylesheet" href="style.css">
+    <script src="js/couchesFondCarte.js"></script>
+    <script src="cletoken.js"></script>
 
 
 </head>
@@ -26,28 +29,33 @@
 
     <script>
         const centreCarte = [46.748441, -71.779840];
-        const fondRues = L.esri.basemapLayer('Streets');
-        const fondImagerie = L.esri.basemapLayer('Imagery');
+
+        const fondRues = L.esri.Vector.vectorBasemapLayer("arcgis/outdoor", {
+        token: cleAPI
+      });
+
         //Création de la carte de base
         const carte = L.map("carte", {
 
         });
         //Ajout de l'imagerie
-        fondImagerie.addTo(carte);
+        imagerie.addTo(carte);
         //Point central de la carte
         carte.setView(centreCarte, 8);
 
         //Choix des fonds
         const fonds = {
-            "Rues": fondRues,
-            "Imagerie": fondImagerie
+            "OpenStreetMap": osm,
+            "OpenStreetMap clair": Stadia_OSMBright,
+            "Topographique": OpenTopoMap,
+            "Imagerie": imagerie
         }
 
 
         L.control.layers(fonds).addTo(carte);
 
         //Échelle
-        L.control.scale({ 'imperial': false, 'maxWidth': 500 }).addTo(carte);
+        L.control.scale({ 'imperial': false, 'maxWidth': 400 }).addTo(carte);
 
         //Géolocalisation de l'usager
         //Création d'un groupe pour gérer la couche de localisation de l'usager
