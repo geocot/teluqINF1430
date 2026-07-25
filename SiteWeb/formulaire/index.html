@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = fr>
+	<head> 
+		<meta name="Author" content="Martin Couture" /> 
+		<meta charset="utf-8" />  
+	   <title>Formulaire d'entré de données de sites touristiques</title> 
+
+	   <style>
+	   .itemForm{
+		   margin: 2px;
+	   }
+
+	   form{
+		   width: 300px;
+	   }
+	   </style>
+        
+    <script>
+		//Vérification des caractères
+        function Verifmax(textarea, max)
+        {
+            if(textarea.value.length >= max)
+            {
+                alert("Pas plus de 250 caractères");
+            }
+            var boiteNBCaractere = document.getElementById('nbcaractere'); 
+            boiteNBCaractere.innerHTML = "Il vous reste " + (250 - textarea.value.length) + " caractères"
+        }
+        </script>
+	</head> 
+		
+	<body>
+
+		<h1 id="titre">Formulaire d'entré de données</h1>
+		
+		<!--Formulaire-->
+		<form method="post" action="ajout.php" accept-charset="UTF-8" id="fPost">
+		<fieldset>
+		 <legend>Formulaire</legend>
+		  <label class="itemForm" for="LabelNom">Nom :</label>
+		  <input class="itemForm" Name="fnom" type="text" id="nom"><br>
+		  <label class="itemForm" for="LabelNom">CoordX :</label>
+		  <input class="itemForm" name="fcoordx" type="text" id="coordx"><br>
+		  <label class="itemForm" for="LabelNom">CoordY :</label>
+		  <input class="itemForm" name="fcoordy" type="text" id="coordy"><br>
+		  <label class="itemForm" for="LabelNom">URL :</label>
+		  <input class="itemForm" name="furl" type="text" id="url"><br>
+		  
+		  <label for="LabelSuggestion">Description :</label><br>
+		   <textarea class="itemForm" id="info" name="finfo" cols="100" rows="2" onkeyup="Verifmax(this,250)" onkeydown="Verifmax(this,250)"></textarea>
+            <br><div id="nbcaractere">250 caractères maximum</div><br>
+		   <label class="itemForm" for="LabelNom">Mot de passe :</label>
+		   <input class="itemForm" type="password" id="motpasse" name="fmotpasse">
+		   <br>
+		 <input type="submit" value="Envoyer" />
+		 <input type="reset" value="Effacer" />
+		</fieldset>
+
+		</form>
+
+	</body>
+	
+</html>
