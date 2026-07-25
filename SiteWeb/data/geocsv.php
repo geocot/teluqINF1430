@@ -78,7 +78,7 @@
             fclose($outstream);
         }
 
-        //Nom du fichier
+        //Appel de la fonction
         download_csv_results($results, "poi.csv");
      exit();
 
