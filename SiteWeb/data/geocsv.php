@@ -33,12 +33,12 @@
             echo "Désolé, la requête a échoué!";
         
 
-            // Pour le débug
+            /* Pour le débug
             echo "Error: La requête a échoué lors de l'exécution et voici pourquoi :\n";
             echo "Query: " . $sql . "\n";
             echo "Errno: " . $mysqli->errno . "\n";
             echo "Error: " . $mysqli->error . "\n";
-            exit;
+            exit;*/
         }
         //Si table vide
         if ($results->num_rows === 0) {
@@ -82,7 +82,7 @@
         download_csv_results($results, "poi.csv");
      exit();
 
-        $result->free(); //Libération des résultats 
+        $result->free(); //Libération des résultats. 
         $mysqli->close(); //Fermeture de la requête
 		?>
 
