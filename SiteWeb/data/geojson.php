@@ -1,9 +1,5 @@
 		
-<<<<<<< Updated upstream
 		<?php
-=======
-<?php
->>>>>>> Stashed changes
         header("Access-Control-Allow-Origin: *");
 
     //Récupération des données dans le fichier ini pour une meilleure sécurité. 
@@ -44,17 +40,12 @@
             echo "Error: " . $mysqli->error . "\n";
             exit;*/
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         //Si table vide
         if ($results->num_rows === 0) {
             echo "Aucune données!";
             exit;
         }
         
-<<<<<<< Updated upstream
         function download_json_results($results, $name = NULL)
         {
             //Nombre d'enregistrements
@@ -70,19 +61,6 @@
             header('Content-Disposition: attachment; filename='. $name);
             header('Content-Encoding: UTF-8');
             header('Content-Type: text/json; charset=utf-8' );
-=======
-        function download_csv_results($results, $name = NULL)
-        {
-            if( ! $name)
-            {   //Génération d'un nom de fichier
-                $name = md5(uniqid() . microtime(TRUE) . mt_rand()). '.csv';
-            }
-            //Structure d'entête du fichier
-            header('Content-Type: text/csv');
-            header('Content-Disposition: attachment; filename='. $name);
-            header('Content-Encoding: UTF-8');
-            header('Content-Type: text/csv; charset=utf-8' );
->>>>>>> Stashed changes
             header('Content-Transfer-Encoding: binary');
             header('Expires: 0');
             header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -94,7 +72,6 @@
             //Création du fichier      
             $outstream = fopen("php://output", "wb");
             //Entête du CSV
-<<<<<<< Updated upstream
             fwrite($outstream, "{\n\"type\": \"FeatureCollection\",\n\"features\": [\n");  //Entête
             //Insertion des données
             //Compteur
@@ -126,25 +103,6 @@
         $results->free(); //Libération des résultats. 
         $mysqli->close(); //Fermeture de la requête
 		?>
-=======
-            fputcsv($outstream, ["id", "nom", "x", "y", "url", "description"], ',');  //Entête
-            //Insertion des données
-            while ($point = $results->fetch_assoc()){
-                $ligne = [ $point['id'], utf8_encode($point['nom']), $point['coordx'] , $point['coordy'], $point['url'], utf8_encode($point['info'])];
-                fputcsv($outstream, $ligne, ',');
-            }
-            
-            fclose($outstream);
-        }
-
-        //Nom du fichier
-        download_csv_results($results, "poi.csv");
-        exit();
-
-        $result->free(); //Libération des résultats. 
-        $mysqli->close(); //Fermeture de la requête
-?>
->>>>>>> Stashed changes
 
 		
 	
