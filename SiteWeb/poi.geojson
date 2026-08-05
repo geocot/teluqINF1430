@@ -1,0 +1,411 @@
+{
+"type": "FeatureCollection",
+"features": [
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2005,46.8175]
+},
+"properties":{
+"id":"37",
+"url":"https://agora.portquebec.ca/",
+"info":"Place de spectacle en plein air. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2892,46.7522]
+},
+"properties":{
+"id":"66",
+"url":"https://www.sepaq.com/ct/paq/",
+"info":"Aquarium"
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.1962,46.8378]
+},
+"properties":{
+"id":"56",
+"url":"https://baiedebeauport.portquebec.ca/",
+"info":"Plage et activités nautiques. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2105,46.8129]
+},
+"properties":{
+"id":"53",
+"url":"https://www.morrin.org/",
+"info":"Le Morrin Centre est un site patrimonial reconnu à l'échelle nationale, un musée et un centre culturel de langue anglaise."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.3556,46.8557]
+},
+"properties":{
+"id":"60",
+"url":"Aucun",
+"info":"Chute et parc."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-111.022,35.0279]
+},
+"properties":{
+"id":"27",
+"url":"https://www.meteorcrater.com/",
+"info":"Le cratère mesure pr�s de 1 300 m�tres de diam�tre, et sa profondeur est de 190 m�tres. Il s'est form� il y a environ 50 000 ans, � la suite de l'impact d'une m�t�orite d'environ 50 m�tres de diam�tre et d'une masse de 300 000 tonnes."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2094,46.8397]
+},
+"properties":{
+"id":"63",
+"url":"https://www.domainemaizerets.com/",
+"info":"Surprenante oasis de verdure de 27 hectares."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2035,46.8128]
+},
+"properties":{
+"id":"41",
+"url":"Aucun",
+"info":"Escalier très pentu construit en 1635 et offrant une vue pittoresque dans un cadre historique."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-79.0625,43.2625]
+},
+"properties":{
+"id":"28",
+"url":"https://www.oldfortniagara.org/",
+"info":"Une fortification du xviie siècle construite à l'origine pour défendre les intérêts de la Nouvelle-France en Amérique du Nord."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2037,46.8126]
+},
+"properties":{
+"id":"38",
+"url":"https://www.funiculaire.ca/",
+"info":"Moyen de transport qui permet de passer de la terrasse Dufferin au petit Champlain. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-90.1849,38.6247]
+},
+"properties":{
+"id":"18",
+"url":"https://fr.wikipedia.org/wiki/Gateway_Arch",
+"info":"La Gateway Arch est situ�e dans le centre-ville de Saint-Louis dans l'�tat du Missouri. Elle est recouverte d'acier inoxydable mesure 192 m�tres de hauteur (la plus grande arche du monde). Elle est consacr�e � la conqu�te de l'Ouest."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2141,46.8161]
+},
+"properties":{
+"id":"64",
+"url":"https://ilotdespalais.ca/",
+"info":"Diverses expositions sur l'histoire."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2069,46.8079]
+},
+"properties":{
+"id":"43",
+"url":"https://www.lacitadelle.qc.ca/",
+"info":"Forteresse avec citadelle historique, garnison active, musée et cérémonies de relève de la garde."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2396,46.8257]
+},
+"properties":{
+"id":"55",
+"url":"https://parcs.canada.ca/lhn-nhs/qc/cartierbrebeuf",
+"info":"Parc en hommage à Jacques Cartier."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.3073,46.8072]
+},
+"properties":{
+"id":"58",
+"url":"https://lamaisononeill.org/",
+"info":"Exposition sur la maison et ses 3 siècles d'histoire."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2992,46.83]
+},
+"properties":{
+"id":"57",
+"url":"https://www.mega-parc.com/",
+"info":"Centre commercial avec attractions et manèges."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.267,46.8626]
+},
+"properties":{
+"id":"62",
+"url":"https://www.moulindesjesuites.org/",
+"info":"Le Moulin des Jésuites de Charlesbourg est un lieu qui raconte l?histoire de l'ancien Moulin à farine et du Trait-Carré de Charlesbourg."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2023,46.8154]
+},
+"properties":{
+"id":"54",
+"url":"https://mcq.org/",
+"info":"Expositions sur les civilisations anciennes et nouvelles du Québec. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2128,46.8069]
+},
+"properties":{
+"id":"46",
+"url":"https://www.plainesdabraham.ca/",
+"info":"Musée d'histoire des plaines."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.3581,46.8572]
+},
+"properties":{
+"id":"59",
+"url":"https://museehuronwendat.ca/",
+"info":"Musée de la nation Huronne."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2251,46.8011]
+},
+"properties":{
+"id":"52",
+"url":"https://www.mnbaq.org/",
+"info":"Oeuvres d'artistes québécois"
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2001,46.8185]
+},
+"properties":{
+"id":"49",
+"url":"https://museenavaldequebec.ca/",
+"info":"Musée gratuit sur l'histoire navale."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2179,46.808]
+},
+"properties":{
+"id":"47",
+"url":"https://observatoire-capitale.com/",
+"info":"Venez admirer Québec de son plus haut sommet."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.3519,46.8739]
+},
+"properties":{
+"id":"61",
+"url":"https://onhwalumina.ca/",
+"info":"Un parcours nocturne et enchanté."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2131,46.8137]
+},
+"properties":{
+"id":"48",
+"url":"https://parcs.canada.ca/lhn-nhs/qc/fortifications/culture/histoire-history/artillerie-artillery",
+"info":"Lieu historique où vous pouvez admirer la redoute Dauphine. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2467,46.8284]
+},
+"properties":{
+"id":"65",
+"url":"https://www.expocite.com/fr/installations-et-salles/place-jean-beliveau/",
+"info":"Espace extérieur polyvalent et transformable pour créer des événements spectaculaires."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2028,46.8131]
+},
+"properties":{
+"id":"40",
+"url":"https://www.placeroyale.ca/fr/",
+"info":"Pendant le Régime français, la place Royale était nommée place du marché jusqu?en 1686 et servait principalement au commerce."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2883,46.7463]
+},
+"properties":{
+"id":"67",
+"url":"https://fr.wikipedia.org/wiki/Pont_de_Qu%C3%A9bec",
+"info":"Le pont de Québec est un pont mixte ferroviaire et routier qui traverse le fleuve Saint-Laurent entre les villes de Québec (rive nord) et de Lévis (rive sud)."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2126,46.8119]
+},
+"properties":{
+"id":"45",
+"url":"https://parks.canada.ca/lhn-nhs/qc/fortifications/index",
+"info":"Une des portes des fortifications de Québec. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2131,46.8129]
+},
+"properties":{
+"id":"44",
+"url":"https://parks.canada.ca/lhn-nhs/qc/fortifications/index",
+"info":"Une des portes des fortifications de Québec. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2035,46.8118]
+},
+"properties":{
+"id":"39",
+"url":"https://www.quartierpetitchamplain.com/",
+"info":"Le Quartier Petit Champlain est un lieu reconnu pour sa beauté architecturale et son offre commerciale façonnée par l'originalité. "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2186,46.8029]
+},
+"properties":{
+"id":"50",
+"url":"Aucun",
+"info":"Ici fut blessé mortellement dans la matinée du 13 septembre 1759, lors de la bataille des Plaines d'Abraham, Louis-Joseph marquis de Montcalm."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2043,46.8115]
+},
+"properties":{
+"id":"42",
+"url":"https://parks.canada.ca/lhn-nhs/qc/saintlouisforts/index",
+"info":"Construite en 1859, cette longue terrasse populaire surplombe le fleuve et offre une vue panoramique sur la ville.  "
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.217,46.8018]
+},
+"properties":{
+"id":"51",
+"url":"https://www.plainesdabraham.ca/lieux-monuments-historiques/tour-martello-1",
+"info":"Ancienne tour militaire. "
+}
+}]}
