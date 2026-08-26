@@ -25,3 +25,16 @@ body {
     text-align: center;
   }
 
+.popupTitle{
+    margin: 0;
+    padding: 0;
+    color: rgb(35, 155, 35);
+    font-weight: 700;
+    font-size: 18px;
+
+}
+.divPopup{
+    margin: 0;
+    padding: 0;
+
+}

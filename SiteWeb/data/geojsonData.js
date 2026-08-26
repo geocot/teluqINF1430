@@ -3,9 +3,9 @@
             let popupContent = "";
             if(feature.properties.url == "Aucun"){
               console.log(`${feature.properties.url}`);
-              popupContent = `<div class="divPopup"><p>Info: ${feature.properties.info}</p></div>`;
+              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p></div>`;
             } else {
-              popupContent = `<div class="divPopup"><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</p></div>`;
+              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</p></div>`;
             }
             layer.bindPopup(popupContent);
         }

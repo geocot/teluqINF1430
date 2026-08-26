@@ -23,12 +23,13 @@
 
 
         $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName); 
+        $mysqli->set_charset("utf8mb4");  //Important Décodage à la connexion.
         // Réaliser une requête SQL
         $sql = 'SELECT * FROM poi ORDER BY nom; ';
         $results = $mysqli->query($sql);
        
         //Si problème
-        if (!$results = $mysqli->query($sql)) {
+        if (!$results) {
             //La requête a échoué. 
             echo "Désolé, la requête a échoué!";
         
@@ -57,10 +58,11 @@
                 $name = md5(uniqid() . microtime(TRUE) . mt_rand()). '.geojson';
             }
             //Structure d'entête du fichier
-            header('Content-Type: text/json');
+            //header('Content-Type: application/json');
             header('Content-Disposition: attachment; filename='. $name);
-            header('Content-Encoding: UTF-8');
-            header('Content-Type: text/json; charset=utf-8' );
+            //header('Content-Encoding: ansi');
+            
+            header('Content-Type: application/json; charset=utf-8');
             header('Content-Transfer-Encoding: binary');
             header('Expires: 0');
             header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -82,9 +84,10 @@
                 $id = $point['id'];
                 $url = $point['url'];
                 $info = $point['info'];
+                $nom = $point['nom'];
                 //Incrémentation
                 $compteur = $compteur + 1;
-                $ligne = "{\n\"type\":\"Feature\",\n\"geometry\": {\n\"type\":\"Point\",\n\"coordinates\":[$X,$Y]\n},\n\"properties\":{\n\"id\":\"$id\",\n\"url\":\"$url\",\n\"info\":\"$info\"\n}\n}";
+                $ligne = "{\n\"type\":\"Feature\",\n\"geometry\": {\n\"type\":\"Point\",\n\"coordinates\":[$X,$Y]\n},\n\"properties\":{\n\"id\":\"$id\",\n\"nom\":\"$nom\", \n\"url\":\"$url\",\n\"info\":\"$info\"\n}\n}";
                 if($compteur < $nbResultats){
                     $ligne = "$ligne,\n";
                 }
