@@ -20,7 +20,8 @@
 
         //Requête Ajax pour récupérer les données GeoJSON et l'affichage
         async function addGeoJson() {
-            const response = await fetch("poi.geojson");
+            //const response = await fetch("poi.geojson"); //Pour utilisation locale
+            const response = await fetch("data/geojson.php"); //Pour utilisation web
             const data = await response.json();
             L.geoJson(data, {
                 pointToLayer(feature, latlng) {
