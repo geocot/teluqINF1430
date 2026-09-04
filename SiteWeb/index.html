@@ -14,19 +14,29 @@
     <script src="https://unpkg.com/esri-leaflet@3.0.19/dist/esri-leaflet.js"></script>
 
     <script src="https://unpkg.com/esri-leaflet-vector@4.3.2/dist/esri-leaflet-vector.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script> <!--Pour les traiements géographiques-->
 
     <link rel="stylesheet" href="style.css">
     <script src="js/couchesFondCarte.js"></script>
     <script src="data/geojsonData.js"></script>
     <script src="cletoken.js"></script>
+        <script src="js/traitementsGeo.js"></script>
 </head>
 
 <body>
     <div id="carte"></div>
     <div id="Titre" class="leaflet-bar">Carte touristique
+        <div id="infosTouristiques">
+            <p>La destination touristique la plus proche</p>
+            <p id=nomDestinationTouristique class="infosTouristiques">Traitement en cours...</p>
+            <p id=distanceDestinationTouristique class="infosTouristiques"></p>
+        </div>
+        
     </div>
 
     <script>
+        const nomDestinationTouristique = document.getElementById("nomDestinationTouristique");
+        const distanceDestinationTouristique = document.getElementById("distanceDestinationTouristique");
         const centreCarte = [46.748441, -71.779840];
 
         //Création de la carte de base
@@ -56,11 +66,12 @@
 
         //Ajout des données de la BD en format GeoJSON
         addGeoJson();
-
+        
         function localisation() {
             //Suivi de la position
             carte.locate({ setView: true, watch: false })
                 .on('locationfound', function (e) { //Lors de l'accès à la position de l'usager
+                    pointTourismePlusProcheUsager([parseFloat(e.longitude), parseFloat(e.latitude)]);    //Avec turf on trouve le plus proche
                     let marker = L.circle([e.latitude, e.longitude], 2, {  //Symbole de positionnement
                         color: 'blue',
                         fillOpacity: 1
@@ -83,6 +94,7 @@
         }
 
         localisation(); //Appel de la fonction
+        
     </script>
 </body>
 

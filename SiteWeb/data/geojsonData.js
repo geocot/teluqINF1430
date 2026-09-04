@@ -2,7 +2,6 @@
         function onEachFeature(feature, layer) {
             let popupContent = "";
             if(feature.properties.url == "Aucun"){
-              console.log(`${feature.properties.url}`);
               popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p></div>`;
             } else {
               popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</p></div>`;
@@ -25,8 +24,12 @@
             const data = await response.json();
             L.geoJson(data, {
                 pointToLayer(feature, latlng) {
+                    ajoutPoints(feature);  //AJout des points Turf pour les traitements de géomatique
                     return L.marker(latlng, { icon: tourismeIcon });
                 },
                 onEachFeature: onEachFeature
             }).addTo(carte);
+            creationFeatureCollectionPointTurf() //Création de la FeatureCollection de points Turf. 
         }
+
+        

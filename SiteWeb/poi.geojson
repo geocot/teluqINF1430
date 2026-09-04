@@ -9,6 +9,7 @@
 },
 "properties":{
 "id":"37",
+"nom":"Agora du Port de Québec", 
 "url":"https://agora.portquebec.ca/",
 "info":"Place de spectacle en plein air. "
 }
@@ -21,6 +22,7 @@
 },
 "properties":{
 "id":"66",
+"nom":"Aquarium du Québec", 
 "url":"https://www.sepaq.com/ct/paq/",
 "info":"Aquarium"
 }
@@ -33,6 +35,7 @@
 },
 "properties":{
 "id":"56",
+"nom":"Baie de Beauport", 
 "url":"https://baiedebeauport.portquebec.ca/",
 "info":"Plage et activités nautiques. "
 }
@@ -45,8 +48,9 @@
 },
 "properties":{
 "id":"53",
+"nom":"Centre culturel Morrin", 
 "url":"https://www.morrin.org/",
-"info":"Le Morrin Centre est un site patrimonial reconnu à l'échelle nationale, un musée et un centre culturel de langue anglaise."
+"info":"Le Morrin Centre est un site patrimonial reconnu à l?échelle nationale, un musée et un centre culturel de langue anglaise."
 }
 },
 {
@@ -57,20 +61,9 @@
 },
 "properties":{
 "id":"60",
+"nom":"Chute Kabir-Kouba", 
 "url":"Aucun",
 "info":"Chute et parc."
-}
-},
-{
-"type":"Feature",
-"geometry": {
-"type":"Point",
-"coordinates":[-111.022,35.0279]
-},
-"properties":{
-"id":"27",
-"url":"https://www.meteorcrater.com/",
-"info":"Le cratère mesure pr�s de 1 300 m�tres de diam�tre, et sa profondeur est de 190 m�tres. Il s'est form� il y a environ 50 000 ans, � la suite de l'impact d'une m�t�orite d'environ 50 m�tres de diam�tre et d'une masse de 300 000 tonnes."
 }
 },
 {
@@ -81,6 +74,7 @@
 },
 "properties":{
 "id":"63",
+"nom":"Domaine Maizerets", 
 "url":"https://www.domainemaizerets.com/",
 "info":"Surprenante oasis de verdure de 27 hectares."
 }
@@ -93,20 +87,9 @@
 },
 "properties":{
 "id":"41",
+"nom":"Escalier Casse-Cou", 
 "url":"Aucun",
 "info":"Escalier très pentu construit en 1635 et offrant une vue pittoresque dans un cadre historique."
-}
-},
-{
-"type":"Feature",
-"geometry": {
-"type":"Point",
-"coordinates":[-79.0625,43.2625]
-},
-"properties":{
-"id":"28",
-"url":"https://www.oldfortniagara.org/",
-"info":"Une fortification du xviie siècle construite à l'origine pour défendre les intérêts de la Nouvelle-France en Amérique du Nord."
 }
 },
 {
@@ -117,20 +100,9 @@
 },
 "properties":{
 "id":"38",
+"nom":"Funiculaire du Vieux-Québec", 
 "url":"https://www.funiculaire.ca/",
 "info":"Moyen de transport qui permet de passer de la terrasse Dufferin au petit Champlain. "
-}
-},
-{
-"type":"Feature",
-"geometry": {
-"type":"Point",
-"coordinates":[-90.1849,38.6247]
-},
-"properties":{
-"id":"18",
-"url":"https://fr.wikipedia.org/wiki/Gateway_Arch",
-"info":"La Gateway Arch est situ�e dans le centre-ville de Saint-Louis dans l'�tat du Missouri. Elle est recouverte d'acier inoxydable mesure 192 m�tres de hauteur (la plus grande arche du monde). Elle est consacr�e � la conqu�te de l'Ouest."
 }
 },
 {
@@ -141,6 +113,7 @@
 },
 "properties":{
 "id":"64",
+"nom":"L'Îlot des Palais", 
 "url":"https://ilotdespalais.ca/",
 "info":"Diverses expositions sur l'histoire."
 }
@@ -153,6 +126,7 @@
 },
 "properties":{
 "id":"43",
+"nom":"La Citadelle de Québec", 
 "url":"https://www.lacitadelle.qc.ca/",
 "info":"Forteresse avec citadelle historique, garnison active, musée et cérémonies de relève de la garde."
 }
@@ -165,6 +139,7 @@
 },
 "properties":{
 "id":"55",
+"nom":"Lieu Cartier-Bréboeuf", 
 "url":"https://parcs.canada.ca/lhn-nhs/qc/cartierbrebeuf",
 "info":"Parc en hommage à Jacques Cartier."
 }
@@ -177,20 +152,9 @@
 },
 "properties":{
 "id":"58",
+"nom":"Maison O'Neill", 
 "url":"https://lamaisononeill.org/",
 "info":"Exposition sur la maison et ses 3 siècles d'histoire."
-}
-},
-{
-"type":"Feature",
-"geometry": {
-"type":"Point",
-"coordinates":[-71.2992,46.83]
-},
-"properties":{
-"id":"57",
-"url":"https://www.mega-parc.com/",
-"info":"Centre commercial avec attractions et manèges."
 }
 },
 {
@@ -201,8 +165,22 @@
 },
 "properties":{
 "id":"62",
+"nom":"Moulin des Jésuites", 
 "url":"https://www.moulindesjesuites.org/",
-"info":"Le Moulin des Jésuites de Charlesbourg est un lieu qui raconte l?histoire de l'ancien Moulin à farine et du Trait-Carré de Charlesbourg."
+"info":"Le Moulin des Jésuites de Charlesbourg est un lieu qui raconte l'histoire de l'ancien Moulin à farine et du Trait-Carré de Charlesbourg."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.3581,46.8572]
+},
+"properties":{
+"id":"59",
+"nom":"Musée Huron-Wendat", 
+"url":"https://museehuronwendat.ca/",
+"info":"Musée de la nation Huronne."
 }
 },
 {
@@ -213,6 +191,7 @@
 },
 "properties":{
 "id":"54",
+"nom":"Musée de la civilisation", 
 "url":"https://mcq.org/",
 "info":"Expositions sur les civilisations anciennes et nouvelles du Québec. "
 }
@@ -225,20 +204,9 @@
 },
 "properties":{
 "id":"46",
+"nom":"Musée des plaines d'Abraham", 
 "url":"https://www.plainesdabraham.ca/",
 "info":"Musée d'histoire des plaines."
-}
-},
-{
-"type":"Feature",
-"geometry": {
-"type":"Point",
-"coordinates":[-71.3581,46.8572]
-},
-"properties":{
-"id":"59",
-"url":"https://museehuronwendat.ca/",
-"info":"Musée de la nation Huronne."
 }
 },
 {
@@ -249,6 +217,7 @@
 },
 "properties":{
 "id":"52",
+"nom":"Musée national des beaux-arts", 
 "url":"https://www.mnbaq.org/",
 "info":"Oeuvres d'artistes québécois"
 }
@@ -261,8 +230,22 @@
 },
 "properties":{
 "id":"49",
+"nom":"Musée naval de Québec", 
 "url":"https://museenavaldequebec.ca/",
 "info":"Musée gratuit sur l'histoire navale."
+}
+},
+{
+"type":"Feature",
+"geometry": {
+"type":"Point",
+"coordinates":[-71.2992,46.83]
+},
+"properties":{
+"id":"57",
+"nom":"Méga Parc", 
+"url":"https://www.mega-parc.com/",
+"info":"Centre commercial avec attractions et manèges."
 }
 },
 {
@@ -273,6 +256,7 @@
 },
 "properties":{
 "id":"47",
+"nom":"Observatoire de la Capitale", 
 "url":"https://observatoire-capitale.com/",
 "info":"Venez admirer Québec de son plus haut sommet."
 }
@@ -285,6 +269,7 @@
 },
 "properties":{
 "id":"61",
+"nom":"Onhwa' Lumina", 
 "url":"https://onhwalumina.ca/",
 "info":"Un parcours nocturne et enchanté."
 }
@@ -297,6 +282,7 @@
 },
 "properties":{
 "id":"48",
+"nom":"Parc-de-l'Artillerie", 
 "url":"https://parcs.canada.ca/lhn-nhs/qc/fortifications/culture/histoire-history/artillerie-artillery",
 "info":"Lieu historique où vous pouvez admirer la redoute Dauphine. "
 }
@@ -309,6 +295,7 @@
 },
 "properties":{
 "id":"65",
+"nom":"Place Jean-Béliveau", 
 "url":"https://www.expocite.com/fr/installations-et-salles/place-jean-beliveau/",
 "info":"Espace extérieur polyvalent et transformable pour créer des événements spectaculaires."
 }
@@ -321,6 +308,7 @@
 },
 "properties":{
 "id":"40",
+"nom":"Place Royale", 
 "url":"https://www.placeroyale.ca/fr/",
 "info":"Pendant le Régime français, la place Royale était nommée place du marché jusqu?en 1686 et servait principalement au commerce."
 }
@@ -333,6 +321,7 @@
 },
 "properties":{
 "id":"67",
+"nom":"Pont de Québec", 
 "url":"https://fr.wikipedia.org/wiki/Pont_de_Qu%C3%A9bec",
 "info":"Le pont de Québec est un pont mixte ferroviaire et routier qui traverse le fleuve Saint-Laurent entre les villes de Québec (rive nord) et de Lévis (rive sud)."
 }
@@ -345,6 +334,7 @@
 },
 "properties":{
 "id":"45",
+"nom":"Porte Kent", 
 "url":"https://parks.canada.ca/lhn-nhs/qc/fortifications/index",
 "info":"Une des portes des fortifications de Québec. "
 }
@@ -357,6 +347,7 @@
 },
 "properties":{
 "id":"44",
+"nom":"Porte Saint-Jean", 
 "url":"https://parks.canada.ca/lhn-nhs/qc/fortifications/index",
 "info":"Une des portes des fortifications de Québec. "
 }
@@ -369,6 +360,7 @@
 },
 "properties":{
 "id":"39",
+"nom":"Quartier Petit Champlain", 
 "url":"https://www.quartierpetitchamplain.com/",
 "info":"Le Quartier Petit Champlain est un lieu reconnu pour sa beauté architecturale et son offre commerciale façonnée par l'originalité. "
 }
@@ -381,6 +373,7 @@
 },
 "properties":{
 "id":"50",
+"nom":"Stèle Montcalm 1759", 
 "url":"Aucun",
 "info":"Ici fut blessé mortellement dans la matinée du 13 septembre 1759, lors de la bataille des Plaines d'Abraham, Louis-Joseph marquis de Montcalm."
 }
@@ -393,6 +386,7 @@
 },
 "properties":{
 "id":"42",
+"nom":"Terrasse Dufferin", 
 "url":"https://parks.canada.ca/lhn-nhs/qc/saintlouisforts/index",
 "info":"Construite en 1859, cette longue terrasse populaire surplombe le fleuve et offre une vue panoramique sur la ville.  "
 }
@@ -405,6 +399,7 @@
 },
 "properties":{
 "id":"51",
+"nom":"Tour Martello no 1", 
 "url":"https://www.plainesdabraham.ca/lieux-monuments-historiques/tour-martello-1",
 "info":"Ancienne tour militaire. "
 }

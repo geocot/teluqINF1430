@@ -20,7 +20,7 @@ body {
     background-color: rgb(247,248,248);
     color: gray;
     font-weight: bold;
-    font-size:30px;
+    font-size:1.4em;
     padding: 10px;
     text-align: center;
   }
@@ -37,4 +37,25 @@ body {
     margin: 0;
     padding: 0;
 
+}
+
+#infosTouristiques{
+    margin: 0;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px rgb(88, 88, 88) solid;
+    padding: 3px;
+    font-size: .7em;
+}
+
+#infosTouristiques p {
+    margin: 0;
+}
+
+.infosTouristiques {
+    font-weight: 700;
+    font-size: .9em;
+    margin: 0px;
+    padding: 0;
+    color: rgb(28, 100, 233);
 }
