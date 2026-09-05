@@ -14,13 +14,14 @@
     <script src="https://unpkg.com/esri-leaflet@3.0.19/dist/esri-leaflet.js"></script>
 
     <script src="https://unpkg.com/esri-leaflet-vector@4.3.2/dist/esri-leaflet-vector.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script> <!--Pour les traiements géographiques-->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+    <!--Pour les traiements géographiques-->
 
     <link rel="stylesheet" href="style.css">
     <script src="js/couchesFondCarte.js"></script>
     <script src="data/geojsonData.js"></script>
     <script src="cletoken.js"></script>
-        <script src="js/traitementsGeo.js"></script>
+    <script src="js/traitementsGeo.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
             <p id=nomDestinationTouristique class="infosTouristiques">Traitement en cours...</p>
             <p id=distanceDestinationTouristique class="infosTouristiques"></p>
         </div>
-        
+
     </div>
 
     <script>
@@ -66,26 +67,32 @@
 
         //Ajout des données de la BD en format GeoJSON
         addGeoJson();
-        
+
+        //Icon pour la position de l'usager
+        var myIcon = L.icon({
+            iconUrl: 'images/monster.png',
+            iconSize: [50, 50],
+            iconAnchor: [25, 25],
+            popupAnchor: [-3, -76]
+        });
+
         function localisation() {
             //Suivi de la position
-            carte.locate({ setView: true, watch: false })
+            carte.locate({ setView: false, watch: true })
                 .on('locationfound', function (e) { //Lors de l'accès à la position de l'usager
-                    pointTourismePlusProcheUsager([parseFloat(e.longitude), parseFloat(e.latitude)]);    //Avec turf on trouve le plus proche
-                    let marker = L.circle([e.latitude, e.longitude], 2, {  //Symbole de positionnement
-                        color: 'blue',
-                        fillOpacity: 1
-                    });
+                    carte.panTo([e.latitude, e.longitude]);//Déplace la carte
+                    let marker = L.marker([e.latitude, e.longitude], {icon:myIcon});
                     let circle = L.circle([e.latitude, e.longitude], e.accuracy / 2, { //Symbole pour la précision
                         weight: 0,
-                        color: 'blue',
-                        fillColor: 'blue',
+                        color: 'yellow',
+                        fillColor: 'yellow',
                         fillOpacity: 0.2
                     });
                     //Efface les couches et les ajoute pour le rafraichissement
                     groupePosition.clearLayers();
                     groupePosition.addLayer(marker);
                     groupePosition.addLayer(circle);
+                    pointTourismePlusProcheUsager([parseFloat(e.longitude), parseFloat(e.latitude)]);    //Avec turf on trouve le plus proche
                 })
                 .on('locationerror', function (e) {
                     console.log(e);
@@ -94,7 +101,7 @@
         }
 
         localisation(); //Appel de la fonction
-        
+
     </script>
 </body>
 
