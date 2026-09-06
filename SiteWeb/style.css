@@ -15,7 +15,7 @@ body {
 #Titre{
     position: absolute;
     right: 10px;
-    bottom:20px;
+    bottom:25px;
     z-index: 401;
     background-color: rgb(247,248,248);
     color: gray;
@@ -33,11 +33,11 @@ body {
     font-size: 18px;
 
 }
-.divPopup{
+.divPopup p{
     margin: 0;
     padding: 0;
-
 }
+
 
 #infosTouristiques{
     margin: 0;
@@ -58,4 +58,21 @@ body {
     margin: 0px;
     padding: 0;
     color: rgb(28, 100, 233);
+}
+
+@media screen and (max-width: 450px) {
+    #Titre{
+        position: absolute;
+        right: 0;
+        left:0;
+        width: 100%;
+        padding: 0;
+        border-width: 0px;
+        font-size: 1.4em;
+    }
+
+    #infosTouristiques{
+        border-width: 0px;
+    }
+
 }

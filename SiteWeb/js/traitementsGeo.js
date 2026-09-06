@@ -20,7 +20,10 @@ function creationFeatureCollectionPointTurf(){
 function pointTourismePlusProcheUsager(positionUsager){
     pointTurfUsager = turf.point([positionUsager[0],positionUsager[1]]);
     var nearest = turf.nearestPoint(pointTurfUsager, featureCollectionPointTurf);
-    console.log(nearest);
+    let trajetPlusProche = L.polyline([[nearest.geometry.coordinates[1], nearest.geometry.coordinates[0]], [positionUsager[1],positionUsager[0]]], {color: 'blue'});
+
+    groupeTrajet.clearLayers();
+    groupeTrajet.addLayer(trajetPlusProche);
     nomDestinationTouristique.innerHTML = nearest.properties.nom;
     distanceDestinationTouristique.innerHTML = nearest.properties.distanceToPoint.toFixed(2) + " km"; 
 }

@@ -42,12 +42,12 @@
 
         //Création de la carte de base
         const carte = L.map("carte", {
-
+            zoomControl: false
         });
         //Ajout de l'imagerie
         imagerie.addTo(carte);
         //Point central de la carte
-        carte.setView(centreCarte, 8);
+        carte.setView(centreCarte, 12);
 
         //Choix des fonds
         const fonds = {
@@ -59,11 +59,12 @@
         L.control.layers(fonds).addTo(carte);
 
         //Échelle
-        L.control.scale({ 'imperial': false, 'maxWidth': 400 }).addTo(carte);
+        L.control.scale({ 'imperial': false, 'maxWidth': 200, position:"topleft" }).addTo(carte);
 
         //Géolocalisation de l'usager
         //Création d'un groupe pour gérer la couche de localisation de l'usager
         let groupePosition = L.layerGroup().addTo(carte);
+        let groupeTrajet = L.layerGroup().addTo(carte); //Pour les trajets
 
         //Ajout des données de la BD en format GeoJSON
         addGeoJson();
@@ -82,16 +83,9 @@
                 .on('locationfound', function (e) { //Lors de l'accès à la position de l'usager
                     carte.panTo([e.latitude, e.longitude]);//Déplace la carte
                     let marker = L.marker([e.latitude, e.longitude], {icon:myIcon});
-                    let circle = L.circle([e.latitude, e.longitude], e.accuracy / 2, { //Symbole pour la précision
-                        weight: 0,
-                        color: 'yellow',
-                        fillColor: 'yellow',
-                        fillOpacity: 0.2
-                    });
                     //Efface les couches et les ajoute pour le rafraichissement
                     groupePosition.clearLayers();
                     groupePosition.addLayer(marker);
-                    groupePosition.addLayer(circle);
                     pointTourismePlusProcheUsager([parseFloat(e.longitude), parseFloat(e.latitude)]);    //Avec turf on trouve le plus proche
                 })
                 .on('locationerror', function (e) {
