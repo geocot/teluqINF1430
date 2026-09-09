@@ -14,14 +14,18 @@
     <script src="https://unpkg.com/esri-leaflet@3.0.19/dist/esri-leaflet.js"></script>
 
     <script src="https://unpkg.com/esri-leaflet-vector@4.3.2/dist/esri-leaflet-vector.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
-    <!--Pour les traiements géographiques-->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script><!--Pour les traiements géographiques-->
+    
+    <!--Pour les Easy button-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <script src="js/couchesFondCarte.js"></script>
     <script src="data/geojsonData.js"></script>
     <script src="cletoken.js"></script>
     <script src="js/traitementsGeo.js"></script>
+    <script src="js/boutons.js"></script>
 </head>
 
 <body>
@@ -56,6 +60,10 @@
             "Imagerie": imagerie
         }
 
+        //Ajout des bouton pour le suivit
+        let btnStopLocalisation = new boutonStopLocalisation().addTo(carte);
+        let btnStartLocalisation = new boutonStartLocalisation().addTo(carte);
+
         L.control.layers(fonds).addTo(carte);
 
         //Échelle
@@ -77,8 +85,19 @@
             popupAnchor: [-3, -76]
         });
 
+        function arretLocalisation(){
+            carte.stopLocate();
+            groupePosition.clearLayers();
+            groupeTrajet.clearLayers();
+            //Change les informations dans le panneau. 
+            nomDestinationTouristique.innerHTML = "Localisation non activée";
+            distanceDestinationTouristique.innerHTML = "";
+        }
+
         function localisation() {
             //Suivi de la position
+            nomDestinationTouristique.innerHTML = "En traitement....";
+            distanceDestinationTouristique.innerHTML = "..."; 
             carte.locate({ setView: false, watch: true })
                 .on('locationfound', function (e) { //Lors de l'accès à la position de l'usager
                     carte.panTo([e.latitude, e.longitude]);//Déplace la carte
@@ -90,7 +109,10 @@
                 })
                 .on('locationerror', function (e) {
                     console.log(e);
-                    alert("Problème avec la localisation"); //En cas d'erreur.
+                    //En cas d'erreur.
+                     nomDestinationTouristique.innerHTML = "Problème avec la localisation";
+                     distanceDestinationTouristique.innerHTML = ""; 
+
                 });
         }
 
