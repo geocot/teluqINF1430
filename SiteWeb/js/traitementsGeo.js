@@ -19,7 +19,7 @@ function creationFeatureCollectionPointTurf(){
 function pointTourismePlusProcheUsager(positionUsager){
     pointTurfUsager = turf.point([positionUsager[0],positionUsager[1]]);
     var nearest = turf.nearestPoint(pointTurfUsager, featureCollectionPointTurf);
-    let trajetPlusProche = L.polyline([[nearest.geometry.coordinates[1], nearest.geometry.coordinates[0]], [positionUsager[1],positionUsager[0]]], {color: 'yellow'});
+    let trajetPlusProche = L.polyline([[nearest.geometry.coordinates[1], nearest.geometry.coordinates[0]], [positionUsager[1],positionUsager[0]]], {color: 'orange'});
 
     groupeTrajet.clearLayers();
     groupeTrajet.addLayer(trajetPlusProche);

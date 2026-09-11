@@ -57,7 +57,19 @@ body {
     font-size: .9em;
     margin: 0px;
     padding: 0;
-    color: rgb(28, 100, 233);
+    color: rgb(35, 155, 35);
+}
+
+.btnTrajet {
+  background-color: rgb(35, 155, 35);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 @media screen and (max-width: 450px) {
@@ -74,5 +86,7 @@ body {
     #infosTouristiques{
         border-width: 0px;
     }
+
+
 
 }

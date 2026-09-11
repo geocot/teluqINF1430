@@ -2,9 +2,10 @@
         function onEachFeature(feature, layer) {
             let popupContent = "";
             if(feature.properties.url == "Aucun"){
-              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Trajet</button></div>`;
+              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Itinéraire</button></div>`;
             } else {
-              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</a></p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Trajet</button></div>`;
+              //popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</a></p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Trajet</button></div>`;
+                popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Itinéraire</button></div>`;
             }
             layer.bindPopup(popupContent);
         }
