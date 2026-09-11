@@ -2,12 +2,13 @@
         function onEachFeature(feature, layer) {
             let popupContent = "";
             if(feature.properties.url == "Aucun"){
-              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p></div>`;
+              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Trajet</button></div>`;
             } else {
-              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</p></div>`;
+              popupContent = `<div class="divPopup"><p class="popupTitle">${feature.properties.nom}</p><p>Info: ${feature.properties.info}</p><p><a href="${feature.properties.url}" target="_blank">Lien</a></p><button onclick="itineraire(this)" class="btnTrajet" value="${feature.geometry.coordinates},${feature.properties.nom}">Trajet</button></div>`;
             }
             layer.bindPopup(popupContent);
         }
+
 
         //Icone pour les données GeoJSON
         const tourismeIcon = L.icon({
@@ -19,8 +20,8 @@
 
         //Requête Ajax pour récupérer les données GeoJSON et l'affichage
         async function addGeoJson() {
-            const response = await fetch("poi.geojson"); //Pour utilisation locale
-            //const response = await fetch("data/geojson.php"); //Pour utilisation web
+            //const response = await fetch("poi.geojson"); //Pour utilisation locale
+            const response = await fetch("data/geojson.php"); //Pour utilisation web
             const data = await response.json();
             L.geoJson(data, {
                 pointToLayer(feature, latlng) {

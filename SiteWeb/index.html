@@ -26,22 +26,27 @@
     <script src="cletoken.js"></script>
     <script src="js/traitementsGeo.js"></script>
     <script src="js/boutons.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/traduction.js"></script>
 </head>
 
 <body>
     <div id="carte"></div>
     <div id="Titre" class="leaflet-bar">Carte touristique
         <div id="infosTouristiques">
-            <p>La destination touristique la plus proche</p>
-            <p id=nomDestinationTouristique class="infosTouristiques">Traitement en cours...</p>
+            <p id="titrePanneau"></p>
+            <p id="messagePanneau" class="infosTouristiques">Traitement en cours...</p>
             <p id=distanceDestinationTouristique class="infosTouristiques"></p>
         </div>
 
     </div>
 
     <script>
-        const nomDestinationTouristique = document.getElementById("nomDestinationTouristique");
+        const messagePanneau = document.getElementById("messagePanneau");
         const distanceDestinationTouristique = document.getElementById("distanceDestinationTouristique");
+        const titrePanneau = document.getElementById("titrePanneau");
+        let dernierePositionUsagerYX = null;
+
         const centreCarte = [46.748441, -71.779840];
 
         //Création de la carte de base
@@ -73,46 +78,52 @@
         //Création d'un groupe pour gérer la couche de localisation de l'usager
         let groupePosition = L.layerGroup().addTo(carte);
         let groupeTrajet = L.layerGroup().addTo(carte); //Pour les trajets
+        let groupeEtapes = L.layerGroup().addTo(carte); //Pour les étapes de l'itinéraire
 
         //Ajout des données de la BD en format GeoJSON
         addGeoJson();
 
         //Icon pour la position de l'usager
         var myIcon = L.icon({
-            iconUrl: 'images/monster.png',
-            iconSize: [50, 50],
+            iconUrl: 'images/cat.gif',
+            iconSize: [60, 60],
             iconAnchor: [25, 25],
             popupAnchor: [-3, -76]
         });
 
+        //Arrêt et efface la position et le trajet le plus proche. 
         function arretLocalisation(){
+            groupeEtapes.clearLayers();
             carte.stopLocate();
-            groupePosition.clearLayers();
             groupeTrajet.clearLayers();
-            //Change les informations dans le panneau. 
-            nomDestinationTouristique.innerHTML = "Localisation non activée";
+            //Change les informations dans le panneau.
+            titrePanneau.innerHTML = "La destination touristique la plus proche"; 
+            messagePanneau.innerHTML = "Localisation non activée";
             distanceDestinationTouristique.innerHTML = "";
         }
 
         function localisation() {
             //Suivi de la position
-            nomDestinationTouristique.innerHTML = "En traitement....";
+            titrePanneau.innerHTML = "La destination touristique la plus proche"; 
+            messagePanneau.innerHTML = "En traitement....";
             distanceDestinationTouristique.innerHTML = "..."; 
             carte.locate({ setView: false, watch: true })
                 .on('locationfound', function (e) { //Lors de l'accès à la position de l'usager
+                    groupeEtapes.clearLayers(); //Efface les itinéraires
                     carte.panTo([e.latitude, e.longitude]);//Déplace la carte
                     let marker = L.marker([e.latitude, e.longitude], {icon:myIcon});
                     //Efface les couches et les ajoute pour le rafraichissement
                     groupePosition.clearLayers();
                     groupePosition.addLayer(marker);
                     pointTourismePlusProcheUsager([parseFloat(e.longitude), parseFloat(e.latitude)]);    //Avec turf on trouve le plus proche
+                    //Met à jour la dernière position de l'usager
+                    dernierePositionUsagerYX = [e.latitude, e.longitude]
                 })
                 .on('locationerror', function (e) {
                     console.log(e);
                     //En cas d'erreur.
-                     nomDestinationTouristique.innerHTML = "Problème avec la localisation";
+                     messagePanneau.innerHTML = "Problème avec la localisation";
                      distanceDestinationTouristique.innerHTML = ""; 
-
                 });
         }
 
